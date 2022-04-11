@@ -15,10 +15,10 @@
           display: block;
           padding-top: 1rem;
         "/>
-    <v-card-title class="justify-center pt-5" style="font-size: 2.25rem; margin-left: 3.25rem;">Montrac</v-card-title>
-    <v-divider ></v-divider>
+    <v-card-title class="justify-center pt-5" style="font-size: 2.25rem; margin-left: .5rem;">Montrac</v-card-title>
+    <v-divider></v-divider>
     </div>
-      <v-list class="mt-6">
+      <v-list style="margin-top: 3rem">
         <v-list-item>
           <v-list-item-icon>
             <v-icon>mdi-account-circle</v-icon>
