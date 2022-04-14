@@ -47,8 +47,10 @@
         id="email"
         label="DNI"
         clearable
+        :rules="identificationRules"
         v-model="model.identification"
         required
+        maxlength="8"
       ></v-text-field>
       <v-text-field
         class="text"
@@ -128,6 +130,15 @@ export default {
         password: "",
       },
       rules: [(v) => !!v || "Este campo es requerido"],
+      identificationRules: [
+        (v) => !!v || "DNI es requerido",
+        (v) => !/(?=.*[A-Z])/.test(v) || "No puede contener letras",
+        (v) => !/(?=.*[a-z])/.test(v) || "No puede contener letras",
+        (v) =>
+          !/([!@#$*/?¡¿%])/.test(v) ||
+          "No puede contener caracteres especiales [!@#$%]",
+        (v) => (v && v.length === 8) || "Debe tener 8 números",
+      ],
       phoneNumberRules: [
         (v) => !!v || "Teléfono es requerido",
         (v) => !/(?=.*[A-Z])/.test(v) || "No puede contener letras",
@@ -146,7 +157,14 @@ export default {
       ],
       passwordRules: [
         (v) => !!v || "Contraseña es requerido",
-        (v) => (v && v.length >= 5) || "Debe contener como mínimo 5 caracteres",
+        (v) =>
+          /(?=.*[A-Z])/.test(v) || "La contraseña debe contener una mayúscula",
+        (v) =>
+          /(?=.*[a-z])/.test(v) || "La contraseña debe contener una minúscula",
+        (v) =>
+          /([!@#$*/?¡¿%])/.test(v) ||
+          "La contraseña debe contener caracteres especiales [!@#$%]",
+        (v) => (v && v.length >= 8) || "Debe contener como mínimo 8 caracteres",
       ],
     };
   },
