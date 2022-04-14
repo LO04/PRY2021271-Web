@@ -164,6 +164,8 @@ export default {
         (v) =>
           /([!@#$*/?¡¿%])/.test(v) ||
           "La contraseña debe contener caracteres especiales [!@#$%]",
+        (v) =>
+          /([1-9])/.test(v) || "La contraseña debe contener al menos un número",
         (v) => (v && v.length >= 8) || "Debe contener como mínimo 8 caracteres",
       ],
     };
