@@ -2,22 +2,30 @@
   <v-app app style="background-color: #324755">
     <v-app-bar app color="dark" flat v-if="currentUser">
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+      <h3>
+        Bienvenido, {{ currentUser.firstName }} {{ currentUser.lastName }}
+      </h3>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app v-if="currentUser">
-    <div class="pt-2" style="height:150px;">
-      <img
-        src="@/assets/montrac_logo.png"
-        class="white--text align-end"
-        height="100px"
-        style="
-          margin-left: auto;
-          margin-right: auto;
-          display: block;
-          padding-top: 1rem;
-        "/>
-    <v-card-title class="justify-center pt-5" style="font-size: 2.25rem; margin-left: .5rem;">Montrac</v-card-title>
-    <v-divider></v-divider>
-    </div>
+      <div class="pt-2" style="height: 150px">
+        <img
+          src="@/assets/montrac_logo.png"
+          class="white--text align-end"
+          height="100px"
+          style="
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            padding-top: 1rem;
+          "
+        />
+        <v-card-title
+          class="justify-center pt-5"
+          style="font-size: 2.25rem; margin-left: 0.5rem"
+          >Montrac</v-card-title
+        >
+        <v-divider></v-divider>
+      </div>
       <v-list style="margin-top: 3rem">
         <v-list-item>
           <v-list-item-icon>
