@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <h3 class="ml-4">Actividades</h3>
     <div class="col-12">
       <card :title="table1.title" :subTitle="table1.subTitle">
         <div slot="raw-content" class="table-responsive">
@@ -26,46 +27,9 @@
   </div>
 </template>
 <script>
-import ProgramProxy from "@/proxies/program.proxy";
+import UrlProxy from "@/proxies/url.proxy";
 import { PaperTable } from "@/components";
-const tableColumns = ["Id", "Name", "Salary", "Country", "City"];
-const tableData = [
-  {
-    id: 1,
-    name: "Dakota Rice",
-    salary: "$36.738",
-    country: "Niger",
-    city: "Oud-Turnhout",
-  },
-  {
-    id: 2,
-    name: "Minerva Hooper",
-    salary: "$23,789",
-    country: "Curaçao",
-    city: "Sinaai-Waas",
-  },
-  {
-    id: 3,
-    name: "Sage Rodriguez",
-    salary: "$56,142",
-    country: "Netherlands",
-    city: "Baileux",
-  },
-  {
-    id: 4,
-    name: "Philip Chaney",
-    salary: "$38,735",
-    country: "Korea, South",
-    city: "Overland Park",
-  },
-  {
-    id: 5,
-    name: "Doris Greene",
-    salary: "$63,542",
-    country: "Malawi",
-    city: "Feldkirchen in Kärnten",
-  },
-];
+const tableColumns = ["Id", "Title", "Uri", "Time", "Date"];
 
 export default {
   components: {
@@ -73,28 +37,28 @@ export default {
   },
   data() {
     return {
-      model: [],
       table1: {
-        title: "Stripped Table",
-        subTitle: "Here is a subtitle for this table",
+        title: "Chrome",
+        subTitle: "Historial de navegación para el browser Chrome",
         columns: [...tableColumns],
-        data: [...tableData],
+        data: [],
       },
       table2: {
         title: "Table on Plain Background",
-        subTitle: "Here is a subtitle for this table",
+        subTitle: "Historial de navegación para el browser Opera",
         columns: [...tableColumns],
-        data: [...tableData],
+        data: [],
       },
     };
   },
   methods: {
-    async getPrograms() {
+    async getUrls() {
       if (this.currentUser) {
-        await ProgramProxy.searchProgram(null, this.currentUser.id)
+        await UrlProxy.searchUrl(null, this.currentUser.id)
           .then((response) => {
             console.log(response.data);
-            this.model = response.data;
+            this.table1.data = response.data.filter(x => x.browser === "Chrome");
+            this.table2.data = response.data.filter(x => x.browser === "Opera");
           })
           .catch((e) => {
             console.log(e);
@@ -111,7 +75,7 @@ export default {
     if (!this.currentUser) {
       this.$router.push("/login");
     }
-    this.getPrograms();
+    this.getUrls();
   },
 };
 </script>
