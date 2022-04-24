@@ -13,7 +13,7 @@
       <div class="logo">
         <a href="#" class="simple-text" style="display: inline-flex">
           <div class="logo-img">
-            <img src="@/assets/montrac_logo.png" alt="" />
+            <img src="@/assets/img/montrac_logo.png" alt="" />
           </div>
           <div class="logo-text">
             {{ title }}

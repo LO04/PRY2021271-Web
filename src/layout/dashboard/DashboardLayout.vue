@@ -1,49 +1,23 @@
 <template>
-  <div class="wrapper">
+  <div v-if="currentUser" class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Home" icon="ti-panel"/>
-        <sidebar-link to="/stats" name="Actividades" icon="ti-user"/>
-        <sidebar-link to="/table-list" name="Mi Equipo" icon="ti-view-list-alt"/>
-        <sidebar-link to="/typography" name="Grupos" icon="ti-layout"/>
-        <sidebar-link to="/icons" name="Configuración" icon="ti-settings"/>
-        <sidebar-link to="/maps" name="Perfil" icon="ti-map"/>
-        <!-- <sidebar-link to="/notifications" name="Notifications" icon="ti-bell"/> -->
+        <sidebar-link to="/dashboard" name="Home" icon="ti-panel" />
+        <sidebar-link to="/typography" name="Actividades" icon="ti-text" />
+        <sidebar-link to="/notifications" name="Mi equipo" icon="ti-bell" />
+        <sidebar-link
+          to="/table-list"
+          name="Grupos"
+          icon="ti-view-list-alt"
+        />
+        <sidebar-link to="/stats" name="Perfil" icon="ti-user" />
       </template>
-      <mobile-menu>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="ti-panel"></i>
-            <p>Stats</p>
-          </a>
-        </li>
-        <drop-down class="nav-item"
-                   title="5 Notifications"
-                   title-classes="nav-link"
-                   icon="ti-bell">
-          <a class="dropdown-item">Notification 1</a>
-          <a class="dropdown-item">Notification 2</a>
-          <a class="dropdown-item">Notification 3</a>
-          <a class="dropdown-item">Notification 4</a>
-          <a class="dropdown-item">Another notification</a>
-        </drop-down>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="ti-settings"></i>
-            <p>Settings</p>
-          </a>
-        </li>
-        <li class="divider"></li>
-      </mobile-menu>
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
+      <dashboard-content @click.native="toggleSidebar"> </dashboard-content>
 
-      <dashboard-content @click.native="toggleSidebar">
-
-      </dashboard-content>
-
-      <content-footer></content-footer>
+      <!-- <content-footer></content-footer> -->
     </div>
   </div>
 </template>
@@ -59,14 +33,24 @@ export default {
     TopNavbar,
     ContentFooter,
     DashboardContent,
-    MobileMenu
+    MobileMenu,
   },
   methods: {
     toggleSidebar() {
       if (this.$sidebar.showSidebar) {
         this.$sidebar.displaySidebar(false);
       }
+    },
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user;
+    },
+  },
+  mounted() {
+    if (!this.currentUser) {
+      this.$router.push("/login");
     }
-  }
+  },
 };
 </script>
