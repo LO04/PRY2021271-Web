@@ -2,34 +2,33 @@
   <div class="row">
     <h3 class="ml-4">Actividades</h3>
     <div class="col-12">
-      <card :title="table1.title" :subTitle="table1.subTitle">
-        <div slot="raw-content" class="table-responsive">
-          <paper-table :data="table1.data" :columns="table1.columns">
-          </paper-table>
-        </div>
-      </card>
+      <v-card class="mx-auto mt-8" flat>
+        <h4 class="ml-2">Historial de navegación de Chrome</h4>
+        <v-data-table
+          :headers="headers"
+          :items="model.chrome.data"
+          :items-per-page="10"
+        >
+        </v-data-table>
+      </v-card>
     </div>
 
     <div class="col-12">
-      <card class="card-plain">
-        <div class="table-full-width table-responsive">
-          <paper-table
-            type="hover"
-            :title="table2.title"
-            :sub-title="table2.subTitle"
-            :data="table2.data"
-            :columns="table2.columns"
-          >
-          </paper-table>
-        </div>
-      </card>
+      <v-card class="mx-auto mt-8" flat>
+        <h4 class="ml-2">Historial de navegación de Opera</h4>
+        <v-data-table
+          :headers="headers"
+          :items="model.chrome.opera"
+          :items-per-page="10"
+        >
+        </v-data-table>
+      </v-card>
     </div>
   </div>
 </template>
 <script>
 import UrlProxy from "@/proxies/url.proxy";
 import { PaperTable } from "@/components";
-const tableColumns = ["Id", "Title", "Uri", "Time", "Date"];
 
 export default {
   components: {
@@ -37,17 +36,30 @@ export default {
   },
   data() {
     return {
-      table1: {
-        title: "Chrome",
-        subTitle: "Historial de navegación para el browser Chrome",
-        columns: [...tableColumns],
-        data: [],
-      },
-      table2: {
-        title: "Table on Plain Background",
-        subTitle: "Historial de navegación para el browser Opera",
-        columns: [...tableColumns],
-        data: [],
+      headers: [
+        { text: "Id", value: "id" },
+        { text: "Titulo", value: "title" },
+        { text: "Url", value: "uri" },
+        { text: "Tiempo", value: "time" },
+        { text: "Fecha", value: "date" },
+      ],
+      model: {
+        chrome: {
+          name: "Chrome",
+          data: [],
+        },
+        opera: {
+          name: "Opera",
+          data: [],
+        },
+        firefox: {
+          name: "Firefox",
+          data: [],
+        },
+        edge: {
+          name: "Edge",
+          data: [],
+        },
       },
     };
   },
@@ -57,8 +69,12 @@ export default {
         await UrlProxy.searchUrl(null, this.currentUser.id)
           .then((response) => {
             console.log(response.data);
-            this.table1.data = response.data.filter(x => x.browser === "Chrome");
-            this.table2.data = response.data.filter(x => x.browser === "Opera");
+            this.model.chrome.data = response.data.filter(
+              (x) => x.browser === "Chrome"
+            );
+            this.model.opera.data = response.data.filter(
+              (x) => x.browser === "Opera"
+            );
           })
           .catch((e) => {
             console.log(e);

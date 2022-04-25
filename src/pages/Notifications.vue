@@ -4,7 +4,7 @@
       <v-tab> Equipo </v-tab>
       <v-tab> Invitaciones </v-tab>
       <v-tab-item>
-        <v-card class="mx-auto mt-8" flat max-width="800">
+        <v-card class="mx-auto mt-8">
           <v-data-table
             :headers="headers"
             :items="members"
