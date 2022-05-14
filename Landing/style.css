@@ -1,0 +1,129 @@
+:root {
+    --blu: #005E7D;
+    --red: #FC6D78;
+    --gry: #30394B;
+    --wht: rgb(255, 255, 255);
+}
+
+.btn {
+  background:var(--blu);
+  border:none;
+  color:white!important;
+}
+
+.btn:hover {
+  background:var(--red);
+  border:none;
+}
+
+body {
+  background: var(--wht);
+  font-family: 'Montserrat', sans-serif!important;
+}
+
+::-moz-selection { background:none; }
+::selection { background:none;  }
+
+ @-webkit-keyframes scrollBad {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 -500px;}
+  }
+  @keyframes scrollBad {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 -500px;}
+  }
+
+
+
+.masthead {    
+ background-color: var(--gry)!important;
+    background-position: center center;
+    background-size: 500px!important;
+    
+    background-repeat: repeat!important;
+    -webkit-animation: scrollBad 15s linear infinite!important;
+    animation: scrollBad 15s linear infinite!important;
+    box-shadow: inset 0 -40px 47px rgba(3, 13, 32, 0.358)!important;
+}
+
+.call-to-action {
+background-color: var(--gry)!important;
+    background-position: center center;
+    background-size: 500px!important;
+    
+    background-repeat: repeat!important;
+    -webkit-animation: scrollBad 15s linear infinite!important;
+    animation: scrollBad 15s linear infinite!important;
+    box-shadow: inset 0 40px 47px rgba(3, 13, 32, 0.358)!important;
+
+}
+
+a, .text-primary {
+    color: var(--blu)!important;
+}
+
+
+
+
+section.pricing {
+  background: #eeeeee repeat-y center left!important;
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(252, 109, 120, 0.3);
+  }
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
+}
+

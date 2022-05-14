@@ -1,0 +1,458 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.8 (https://startbootstrap.com/themes/landing-page)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
+ */body{  font-family: 'Montserrat', sans-serif!important;
+}h1,h2,h3,h4,h5,h6{  font-family: 'Montserrat', sans-serif!important;
+font-weight:700}header.masthead{position:relative;background-color: var(--gry)!important; background-image: url("../img/back.png")!important; background-position: center center; background-size: 500px!important; background-repeat: repeat!important; -webkit-animation: scrollBad 15s linear infinite!important; animation: scrollBad 15s linear infinite!important; box-shadow: inset 0 -40px 47px rgba(3, 13, 32, 0.358)!important;padding-top:8rem;padding-bottom:8rem}header.masthead .overlay{position:absolute;background-color:#212529;height:100%;width:100%;top:0;left:0;opacity:.3}header.masthead h1{font-size:2rem}@media (min-width:768px){header.masthead{padding-top:12rem;padding-bottom:12rem}header.masthead h1{font-size:3rem}}.showcase .showcase-text{padding:3rem}.showcase .showcase-img{min-height:30rem;background-size:cover}@media (min-width:768px){.showcase .showcase-text{padding:7rem}}.features-icons{padding-top:7rem;padding-bottom:7rem}.features-icons .features-icons-item{max-width:20rem}.features-icons .features-icons-item .features-icons-icon{height:7rem}.features-icons .features-icons-item .features-icons-icon i{font-size:4.5rem}.features-icons .features-icons-item:hover .features-icons-icon i{font-size:5rem}.contact{padding-top:4rem;padding-bottom:7rem}.contact .testimonial-item{max-width:18rem}.contact .testimonial-item img{max-width:12rem;box-shadow:0 5px 5px 0 #adb5bd}.call-to-action{position:relative;background-color:#343a40;background:url(../img/bg-masthead.jpg) no-repeat center center;background-size:cover;padding-top:7rem;padding-bottom:7rem}.call-to-action .overlay{position:absolute;background-color:#212529;height:100%;width:100%;top:0;left:0;opacity:.3}
+
+
+.nosotros, .imagen {
+	-webkit-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: pulse;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+
+
+#img1 {display: block;}
+#img2 {display: block;}
+#img3 {display: block;}
+
+#img1_m {display: none;}
+#img2_m {display: none;}
+#img3_m {display: none;}
+
+@media screen and (max-width: 700px) {
+    #img1 {display: none;}
+    #img2 {display: none;}
+    #img3 {display: none;}
+
+    #img1_m {display: block;}
+    #img2_m {display: block;}
+    #img3_m {display: block;}
+}
+#logo {
+	margin-left: 2vw;
+}
+
+@media screen and (max-width: 446px){
+    #logo {
+		margin-left: 0vw;
+	}
+}
+
+.contenido {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.mapa {
+	width: 650px;
+	height: 450px;
+	border: 1px solid rgba(83,86,90,.4);
+}
+
+@media screen and (max-width: 991px){
+.mapa {
+	width: 600px;
+	height: 350px;
+}	
+}
+
+.footer-distributed{
+	background: #242c34;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 15px 50px;
+	margin-bottom: -128px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+    width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-whatsapp {
+	font-size: 25px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+	font-size: 17px;
+	line-height: 38px;
+}
+
+
+.footer-distributed .footer-center p {
+	display: inline-block;
+	color: #ffffff;
+    font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+	
+}
+
+
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0;
+	text-align: start;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+.logo-footer {
+	width: 180px;
+	height: 90px;
+	text-align: start;
+}
+
+#about {
+	display: block;
+}
+
+@media  screen and (max-width: 898px) {
+	#about {
+		display: none;
+	}
+}
+
+@media  screen and (max-width: 914px) {
+	#mailto {
+		margin-left: -1vw;
+	}
+}
+@media  screen and (max-width: 889px) {
+	#mailto {
+		margin-left: -1.0vw;
+	}
+}
+@media  screen and (max-width: 880px) {
+	#phone, #mailto2 {
+		margin-left: -9vw;
+	}
+}
+
+@media  screen and (max-width: 768px) {
+	#phone {
+		margin-left: -10vw;
+	}
+}
+@media  screen and (max-width: 730px) {
+	#phone {
+		margin-left: -11vw;
+	}
+}
+@media  screen and (max-width: 650px) {
+	#phone {
+		margin-left: -13vw;
+	}
+}
+@media  screen and (max-width: 560px) {
+	#phone {
+		margin-left: -15vw;
+	}
+}
+@media  screen and (max-width: 495px) {
+	#phone {
+		margin-left: -17vw;
+	}
+}
+@media  screen and (max-width: 414px) {
+	#phone {
+		margin-left: -19vw;
+	}
+}
+@media  screen and (max-width: 375px) {
+	#phone {
+		margin-left: -22vw;
+	}
+}
+
+
+#quienesSomos, #offiuser, #offiprovider {
+	background-size: 650px 480px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+@media screen and (max-width: 570px){
+    #quienesSomos, #offiuser, #offiprovider {
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+}
+@media  screen and (max-width: 1199px) {
+	#quienesSomos, #offiuser, #offiprovider {
+		background-size: 550px 420px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+@media screen and (max-width: 470px){
+    #quienesSomos, #offiuser, #offiprovider {
+		background-size: 450px 320px;
+		background-repeat: no-repeat;
+		background-position: center;
+    }
+}
+@media screen and (max-width: 400px){
+    #quienesSomos, #offiuser, #offiprovider {
+		background-size: 400px 300px;
+		background-repeat: no-repeat;
+		background-position: center;
+    }
+}
+@media screen and (max-width: 375px){
+    #quienesSomos, #offiuser, #offiprovider {
+		background-size: 370px 280px;
+		background-repeat: no-repeat;
+		background-position: center;
+    }
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding: 20px;
+	justify-content: space-evenly;
+}
+.grid-item {
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+@media  screen and (max-width: 500px) {
+	.grid-container {
+		display: grid;
+		grid-template-columns: auto;
+		padding: 20px;
+		justify-content: space-evenly;
+	}
+	.grid-item {
+		padding: 20px 5px;
+		font-size: 30px;
+		text-align: center;
+	}
+}
+.grid-container-team {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding: 20px;
+	justify-content: space-evenly;
+}
+.grid-item-team {
+	padding: 20px;
+	font-size: 30px;
+	text-align: center;
+}
+.members {
+    margin-top: 20px;
+}
+.photoMembers {
+    width: auto;
+    height: 200px;
+    border-radius: 5px;
+}
+@media  screen and (max-width: 600px) {
+	.grid-container-team {
+		display: grid;
+		grid-template-columns: auto auto;
+		padding: 20px;
+		justify-content: space-evenly;
+	}
+	.grid-item-team {
+		padding: 20px 5px;
+		font-size: 30px;
+		text-align: center;
+	  }
+    .photoMembers {
+        width: 150px;
+        height: 200px;
+        border-radius: 5px;
+   }
+}
+@media  screen and (max-width: 460px) {
+	.grid-container-team {
+		display: grid;
+		grid-template-columns: auto;
+		padding: 20px;
+		justify-content: space-evenly;
+	}
+}
+
+.line {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	width: 75%;
+	border: .5px solid #d6d7db;
+}
+
+.imagen {
+	width: 70px;
+}
+
+#precios {
+	margin-top: 3vw;
+}
+
+@media  screen and (max-width: 991px) {
+	#precios {
+		margin-top: 0;
+	}
+
+}	
+
+  

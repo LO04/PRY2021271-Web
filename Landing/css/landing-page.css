@@ -1,0 +1,159 @@
+/*!
+ * Start Bootstrap - Landing Page v5.0.8 (https://startbootstrap.com/themes/landing-page)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
+ */
+
+body {
+    font-family: 'Montserrat', sans-serif!important;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif!important;
+
+  font-weight: 700;
+}
+
+
+ @-webkit-keyframes scrollBad {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 -500px;}
+  }
+  @keyframes scrollBad {
+    0% {background-position: 0 0;}
+    100% {background-position: 0 -500px;}
+  }
+
+header.masthead {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+     background-color: var(--gry)!important;
+    background-image: url("../img/back.png")!important;
+    background-position: center center;
+    background-size: 500px!important;
+    
+    background-repeat: repeat!important;
+    -webkit-animation: scrollBad 15s linear infinite!important;
+    animation: scrollBad 15s linear infinite!important;
+    box-shadow: inset 0 -40px 47px rgba(3, 13, 32, 0.358)!important;
+}
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+.contacto {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+
+.contactForm .label {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600; }
+
+.contactForm .form-control {
+  border: none; }
+
+#map {
+  width: 100%; }
+  @media (max-width: 767.98px) {
+    #map {
+      height: 300px; } }
+
+#contactForm .error {
+  color: red;
+  font-size: 12px; }
+
+#contactForm .form-control {
+  font-size: 16px; }
+
+#message {
+  resize: vertical; }
+
+#form-message-warning, #form-message-success {
+  display: none; }
+
+#form-message-warning {
+  color: red; }
+
+#form-message-success {
+  color: #28a745;
+  font-size: 18px;
+  font-weight: 500; }
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2553b8; }
+
+
+
+
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+
